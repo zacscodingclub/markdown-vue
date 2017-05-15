@@ -2,8 +2,7 @@
   <div class="col-xs-12 col-md-6 pull-right" id="preview">
     <div class="panel panel-default">
       <div class="panel-body">
-        <article class="markdown-body" >
-          {{renderedMarkdown}}
+        <article class="markdown-body" v-html="renderedMarkdown">
         </article>
       </div>
     </div>
@@ -20,6 +19,7 @@ export default {
         text: rawText,
         mode: 'gfm',
       };
+
       this.$http({
         url: 'https://api.github.com/markdown',
         method: 'POST',
