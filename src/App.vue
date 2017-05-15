@@ -6,8 +6,10 @@
         <h4>Zac Baston</h4>
       </div>
     </div>
-    <editor></editor>
-    <preview></preview>
+    <div class="row">
+      <editor></editor>
+      <preview></preview>
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,12 @@ export default {
   components: {
     Editor,
     Preview,
+  },
+  created() {
+    Event.$on('process', (rawText) => {
+      /* eslint-disable no-console */
+      Event.$emit('convertToMarkdown', rawText);
+    });
   },
 };
 </script>
