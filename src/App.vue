@@ -1,23 +1,33 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 header-text">
+        <h1>Markdown Editor Preview</h1>
+        <h4>Zac Baston</h4>
+      </div>
+    </div>
+    <editor></editor>
+    <preview></preview>
   </div>
 </template>
 
 <script>
+import Editor from './components/Editor';
+import Preview from './components/Preview';
+
 export default {
   name: 'app',
+  components: {
+    Editor,
+    Preview,
+  },
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "./assets/style.css";
+
+.markdown-body {
+  min-height: 150px;
 }
 </style>
